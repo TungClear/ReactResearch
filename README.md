@@ -37,7 +37,7 @@ immutable: không thay đổi, ví như biến const. khi ta render 1 react elem
 1. Create app by CRA: yarn create react-app antd-demo OR npx create-react-app antd-demo
 2. Add antd: yarn add antd
 3. Add lint: 
-    - yarn add -D eslint-config-prettier eslint-plugin-prettier husky lint-staged prettier
+    - yarn add -D eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier husky lint-staged prettier
     - add file .prettierignore, .prettierrc.json, .eslintignore, .eslintrc.json
 3. Add craco: yarn add @craco/craco, yarn add craco-less
 4. Create craco.config.js
