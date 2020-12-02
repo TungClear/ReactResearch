@@ -73,3 +73,33 @@ immutable: không thay đổi, ví như biến const. khi ta render 1 react elem
       };
       `
 8. Add less to storybook by import to preview.js: import 'antd/dist/antd.less'
+## Setup react i18next
+1. yarn add i18next i18next-http-backend react-i18next
+2. Create i18n.js
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import Backend from 'i18next-http-backend';
+
+i18n
+  .use(Backend)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init(
+    {
+      lng: localStorage.getItem('locale') || 'en',
+      fallbackLng: 'en',
+      // debug: true,
+      keySeparator: false, // we do not use keys in form messages.welcome
+
+      interpolation: {
+        escapeValue: false, // react already safes from xss
+      },
+    },
+    (err, t) => {
+      if (err) return console.log('something went wrong loading', err);
+      t('key'); // -> same as i18next.t
+    }
+  );
+
+export default i18n;
+3. Add i18n.js to index.js
+4. Create folder locales in public
