@@ -1,0 +1,3 @@
+1. npx create-react-app app-demo
+2. yarn add antd @craco/craco craco-less eslint-config-prettier eslint-plugin-prettier prettier
+3. Create craco.config.js
